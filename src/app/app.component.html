@@ -1,3 +1,26 @@
-<h1>
-  {{title}}
-</h1>
+
+<nav class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">Model Driven Forms</a>
+    <ul class="nav navbar-nav">
+        <li class="active">
+           <a routerLink="/home" 
+           routerLinkActive="active">Home</a>
+        </li>
+        <li class="active">
+           <a routerLink="/login" 
+           routerLinkActive="active">Login</a>
+        </li>
+        <li>
+            <a routerLink="/signup" 
+           routerLinkActive="active">Sign Up</a>
+        </li>
+    </ul>
+</nav>
+<div id="main" class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+Copy rights @ {{ currentYear}}
+</footer>
+

@@ -1,0 +1,50 @@
+<form [formGroup]="signUpForm" novalidate (ngSubmit)="signUp(signUpForm.value,signUpForm.isValid)" role="form">
+  <legend>Sign Up</legend>
+  <div class="form-group">
+    <label for="username">username</label>
+    <input id="username" formControlName="username" type="text" class="form-control" placeholder="username">
+  </div>
+  <div [hidden]="signUpForm.controls.username.valid || !signUpForm.controls.username.touched  " class="form-group">
+    <div class="alert alert-danger ">
+      <strong>error!</strong> username
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <input id="password" formControlName="password" type="password" class="form-control" placeholder="password">
+  </div>
+  <div [hidden]="signUpForm.controls.password.valid || !signUpForm.controls.password.touched  " class="form-group">
+    <div class="alert alert-danger">
+      <strong>error!</strong> password
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">E-Mail</label>
+    <input id="email" formControlName="email" type="email" class="form-control" placeholder="example@domain.com">
+  </div>
+  <div [hidden]="signUpForm.controls.email.valid || !signUpForm.controls.email.touched  "  class="form-group">
+    <div class="alert alert-danger">
+      <strong>error!</strong> E-Mail
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <input  id="country" formControlName="country" type="text" class="form-control">
+  </div>
+  {{signUpForm.controls.country.touched}}
+<div  [hidden]="signUpForm.controls.country.valid || !signUpForm.controls.country.touched"  class="form-group">
+    <div class="alert alert-danger ">
+      <strong>error!</strong> Country
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="birthdate">Birth Date</label>
+    <input id="birthdate" formControlName="birthdate" type="date" class="form-control">
+  </div>
+  <div [hidden]="signUpForm.controls.birthdate.valid || !signUpForm.controls.birthdate.touched" class="form-group">
+    <div class="alert alert-danger ">
+      <strong>error!</strong> birthdate
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
