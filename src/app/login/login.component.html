@@ -1,3 +1,15 @@
-<p>
-  login works!
-</p>
+<form [formGroup]="loginForm" 
+      (ngSubmit)="login(loginForm,loginForm.isValid)" 
+      novalidate>
+  <legend>Login</legend>
+  <textbox [myForm]="loginForm" 
+          [label]="'username:'" 
+          controlName="username"
+          [errorMessage]="'enter  username'" 
+          [isPassword]="false">
+  </textbox>
+  <textbox [myForm]="loginForm" [label]="'password:'" [controlName]="'password'" [errorMessage]="'enter password'" [isPassword]="true">
+  </textbox>
+  <!--{{loginForm.controls.username}}
+  {{loginForm.controls.username.valid}}-->
+</form>

@@ -15,8 +15,11 @@ export class SignupComponent implements OnInit {
     this.signUpForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      country:new FormControl(''),
+      contacts: new FormGroup({
+        email: new FormControl('', [Validators.required]),
+        phone: new FormControl('', [Validators.pattern(/^\d{11}$/)])
+      }),
+      country: new FormControl(''),
       birthdate: new FormControl('', [Validators.required]),
     });
   }
